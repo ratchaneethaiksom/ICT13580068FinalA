@@ -76,7 +76,7 @@ namespace ICT13580068FinalA
 					product.Status = StatusEntry.Text;
 					product.Number = int.Parse(NumEntry.Text);
 					product.Saraly = decimal.Parse(SaralyEntry.Text);
-					var id = App.DbHelper.AddProduct(product);
+                    var id = App.DbHelper.UpdateProduct(product);
 					await DisplayAlert("บันทึกสำเร็จ", "แก้ไขข้อมูลเรียบร้อย" + id, "ตกลง");
                 }
                 await Navigation.PopModalAsync();
