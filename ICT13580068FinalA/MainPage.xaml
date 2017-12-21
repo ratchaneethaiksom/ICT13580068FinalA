@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	x:Class="ICT13580068FinalA.MainPage"
+    Title="ICT13580068FinalA">
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem 
+        Text="New"
+        x:Name="newButton"/>
+        
+    </ContentPage.ToolbarItems>
+
+    <ListView 
+        x:Name="productListView"
+        RowHeight="300">
+    <ListView.ItemTemplate>
+        <DataTemplate>
+            <ViewCell>
+                <ViewCell.ContextActions>
+                    <MenuItem
+                        Text="Edit"
+                        CommandParameter="{Binding .}"
+                        Clicked="Edit_Clicked"/>
+                    <MenuItem
+                        Text="Delete"
+                        CommandParameter="{Binding .}"
+                        IsDestructive="true"
+                        Clicked="Delete_Clicked"/>
+
+               </ViewCell.ContextActions>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition 
+                            Width="100"/>
+                    <ColumnDefinition/>
+                <ColumnDefinition 
+                            Width="50"/>
+
+    </Grid.ColumnDefinitions>
+
+        <Image
+            BackgroundColor="Silver"
+            HeightRequest="200"
+            Source="http://www.servcorp.co.th/media/1808/homepage-bangkok-city-skyline2-2000x700.png"/>
+            <StackLayout
+            Grid.Column="1">
+
+            <Label
+                Text="{Binding Name}"
+                FontAttributes="Bold"
+                TextColor="Navy"/>
+            <Label
+                Text="{Binding Lastname}"
+                FontAttributes="Bold"
+                TextColor="Navy"/>
+            <Label
+                Text="{Binding Age ,StringFormat = 'อายุ {0} '}"/>
+            <Label
+                Text="{Binding Sex}"
+                FontAttributes="Bold"
+                TextColor="Navy"/>
+
+            <Label
+                Text="{Binding Department ,StringFormat= 'แผนก {0} '}"/>
+
+           <Label
+                Text="{Binding Phone ,StringFormat= 'เบอร์โทร {0} '}"/>
+            <Label
+                Text="{Binding Address}"
+                FontAttributes="Bold"
+                TextColor="Navy"/>
+            <Label
+                Text="{Binding Status}"
+                FontAttributes="Bold"
+                TextColor="Navy"/>
+            <Label
+                Text="{Binding Number ,StringFormat= ' จำนวนบุตร {0} '}"/>     
+
+             <Label
+                Text="{Binding Saraly ,StringFormat= ' เงินเดือน {0} '}"/>                  
+
+            </StackLayout>
+
+        <Button
+                Text="+"
+                FontSize="30"
+                Grid.Column="2"
+                Margin="5"
+                BackgroundColor="Silver"
+                VerticalOptions="End"
+                HeightRequest="50"/>
+
+     </Grid>
+
+            </ViewCell>
+          </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>
